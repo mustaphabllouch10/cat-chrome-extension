@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Random Animal",
+  "version": "1.0.0",
+  "description": "A little pixel cat that lives in your browser.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["cat/*.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
