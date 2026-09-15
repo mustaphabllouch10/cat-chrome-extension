@@ -14,10 +14,7 @@ cat.style.pointerEvents = "none";
 document.body.appendChild(cat);
 
 
-// ======================
-// Animation controller
-// ======================
-
+// Change the sprite
 function setSprite(image, width) {
     cat.style.backgroundImage =
         `url("${chrome.runtime.getURL(image)}")`;
@@ -27,10 +24,29 @@ function setSprite(image, width) {
 }
 
 
-// ======================
-// Start idle
-// ======================
+// Currently running behavior
+let currentAction = null;
 
-setSprite("cat/Cat-6-Idle.png", 1000);
 
-let currentAction = idle(cat);
+// Change behavior
+function play(action, image, width) {
+
+    // Stop previous behavior
+    if (currentAction) {
+        currentAction.stop();
+    }
+
+    // Change sprite
+    setSprite(image, width);
+
+    // Start new behavior
+    currentAction = action(cat);
+}
+
+
+// Start with idle
+play(
+    idle,
+    "cat/Cat-6-Idle.png",
+    1000
+);
