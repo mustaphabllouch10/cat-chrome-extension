@@ -1,8 +1,7 @@
-
-
 function walk(cat) {
     let frame = 0;
 
+    // Walk animation
     const animation = setInterval(() => {
         frame++;
 
@@ -13,6 +12,7 @@ function walk(cat) {
         cat.style.backgroundPosition = `-${frame * 100}px 0px`;
     }, 120);
 
+    // Movement
     let position = 20;
     let direction = 1;
 
@@ -24,18 +24,21 @@ function walk(cat) {
         if (position >= maxPosition) {
             position = maxPosition;
             direction = -1;
+
             cat.style.transform = "scaleX(-1)";
         }
 
         if (position <= 20) {
             position = 20;
             direction = 1;
+
             cat.style.transform = "scaleX(1)";
         }
 
         cat.style.left = `${position}px`;
-    }, 120);
+    }, 30);
 
+    // Give content.js a way to stop walking
     return {
         stop() {
             clearInterval(animation);
