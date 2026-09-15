@@ -36,7 +36,7 @@ function walk(cat) {
         }
 
         cat.style.left = `${position}px`;
-    }, 30);
+    }, 120);
 
     // Give content.js a way to stop walking
     return {

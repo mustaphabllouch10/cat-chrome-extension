@@ -10,6 +10,8 @@
     {
       "matches": ["<all_urls>"],
       "js": [
+        "cat-behavior/lay.js",
+        "cat-behavior/sit.js",
         "cat-behavior/walk.js",
         "cat-behavior/idle.js",
         "content.js"

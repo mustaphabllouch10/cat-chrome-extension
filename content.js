@@ -46,7 +46,7 @@ function play(action, image, width) {
 
 // Start with idle
 play(
-    idle,
-    "cat/Cat-6-Idle.png",
-    1000
+    lay,
+    "cat/Cat-6-laying.png",
+    800
 );
